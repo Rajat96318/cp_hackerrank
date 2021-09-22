@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n,m,a[1000000];
+    cin>>n>>m;
+    for(int i=0;i<n;i++)
+        a[i]=0;
+    for(int i=0;i<m;i++)
+    {
+        int p,q;
+        cin>>p>>q;
+        for(int j=p-1;j<=q-1;j++)
+        {
+            a[j]=a[j]+1;
+        }
+    }
+    int qu,ans=0;
+    cin>>qu;
+    for(int i=0;i<qu;i++)
+    {
+        int x;
+        cin>>x;
+        ans=0;
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]>=x)
+                ans++;
+        }
+        cout<<ans<<endl;
+    }
+    return 0;
+}
